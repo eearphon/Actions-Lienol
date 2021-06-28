@@ -70,6 +70,10 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+        rm -rf feeds/packages/net/transmission-web-control
+        rm -rf feeds/packages/net/transmission
+        svn checkout https://github.com/coolsnowwolf/packages/trunk/net/transmission-web-control feeds/packages/net/transmission-web-control
+        svn checkout https://github.com/coolsnowwolf/packages/trunk/net/transmission feeds/packages/net/transmission
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
