@@ -12,3 +12,4 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generate
+sed -i s/'23552k(ubi),25600k@0x6c0000(firmware)'/'121856k(ubi),123904k@0x6c0000(firmware)'/ target/linux/ar71xx/image/legacy.mk
