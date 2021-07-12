@@ -75,6 +75,7 @@ jobs:
         rm -rf feeds/packages/net/transmission
         svn checkout https://github.com/coolsnowwolf/packages/trunk/net/transmission-web-control feeds/packages/net/transmission-web-control
         svn checkout https://github.com/coolsnowwolf/packages/trunk/net/transmission feeds/packages/net/transmission
+        sed -i 's/1880000/18A0000/g' target/linux/ipq806x/files-4.14/arch/arm/boot/dts/qcom-ipq8065-r7800.dts
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
